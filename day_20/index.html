@@ -8,17 +8,53 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
 
+        <style>
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+            }
+
+            li {
+                float: left;
+            }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            /* Change the link color to #111 (black) on hover */
+            li a:hover {
+                background-color: #111;
+            }
+        </style>
+
         <title>Index Page</title>
 
     </head>
     <body>
         <header>
             <nav id="navbar">
-                <a class="nav-link" href="#">NAV1</a>
-                <a class="nav-link" href="#">NAV2</a>
-                <a class="nav-link" href="#">NAV3</a>
+                <ul>
+                    <li><a class="nav-link" href="#">Index</a></li>
+                    <li><a class="nav-link" href="#">Tribute</a></li>
+                    <li><a class="nav-link" href="#">Formulario</a></li>
+                    <li><a class="nav-link" href="#">Links</a></li>
+                    <li><a class="nav-link" href="#">Documento</a></li>
+                </ul>
             </nav>
         </header>
+        <section>
+            <h1 style="text-align: center;">Welcome to my webpage</h1>
+
+            <p style="text-align: center;">This is a simple class project that unites a few webpages</p>
+        </section>
     </body>
     <footer></footer>
 </html>
