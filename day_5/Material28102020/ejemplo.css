@@ -1,0 +1,33 @@
+body {
+  background-color: rgb(230, 205, 173);
+}
+#caja1 {
+  background-color: black;
+  color: #000fff;
+  margin: auto;
+  border-style: solid;
+  padding-left: 70px;
+}
+#caja2 {
+  background-color: black;
+  color: red;
+}
+#caja4 {
+  background-image: url(../gato1.jpg);
+  width: 30%;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+#caja6 {
+  position: absolute;
+}
+ul {
+  list-style-image: url("icon.png");
+}
+a:link {
+  color: yellowgreen;
+}
+a:visited {
+  color: rgb(231, 12, 140);
+}

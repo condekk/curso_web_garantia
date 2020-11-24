@@ -1,0 +1,23 @@
+h1{
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: #00F;
+}
+h2{
+    border-width: 2px;
+    border-style: solid;
+    border-color: #AAA;
+}
+#datos{
+    border-bottom-style: dotted;
+    border-bottom-width: 4px;
+    border-bottom-color: #F00;
+    border-top-style: dotted;
+    border-top-width: 4px;
+    border-top-color: #F00;
+}
+#contenido{
+    border-width: 2px;
+    border-style: dashed;
+    border-color: #0F0;
+}
