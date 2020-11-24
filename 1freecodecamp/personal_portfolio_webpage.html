@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            #welcome-section{
+                height: 100vh;
+            }
+            #navbar{
+                position: fixed;
+                top: 0;
+            }
+            @media screen {
+                body{
+                    background-color: burlywood;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav id="navbar">
+                <a class="nav-link" href="#welcome-section">About</a>
+                <a class="nav-link" href="#projects">Work</a>
+                <a class="nav-link" href="#contact">Contact</a>
+            </nav>
+        </header>
+        <section id="welcome-section">
+            <h1>Hey I am Mimic<br><small>a web developer</small></h1>
+        </section>
+        <section id="projects">
+            <a class="project-tile" href="tribute_page.html"><img src="https://c2.staticflickr.com/4/3689/10613180113_fdf7bcd316_b.jpg" alt="tribute_page"></a><br>
+            <a class="project-tile" href="survey_form.html">survey_form</a><br>
+            <a class="project-tile" href="product_landing_page.html"><img src="https://s3.amazonaws.com/freecodecamp/original_trombones.png" alt="product_landing_page"></a><br>
+            <a class="project-tile" href="technical_documentation_page.html">technical_documentation_page</a><br>
+        </section>
+        <section id="contact">
+            <a id="profile-link" href="https://github.com/freecodecamp" target="_blank">GITHUB</a><br>
+            <a id="profile-link" href="https://www.freecodecamp.org/freecodecamp" target="_blank">FREECODECAMP</a><br>
+        </section>
+    </body>
+    <footer></footer>
+</html>
