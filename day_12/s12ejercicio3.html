@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <style>
+            h1{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Formulario</h1>
+        <form action="">
+            <fieldset class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" placeholder="Nombre" pattern="[a-zA-Z]+" required oninvalid="setCustomValidity('Nombre con formato incorrecto')"><br>
+
+                <label for="apellidos">Apellidos</label>
+                <input type="text" name="apellidos" placeholder="Apellidos" pattern="[a-zA-Z]+" required oninvalid="setCustomValidity('Apellido con formato incorrecto')"><br>
+
+                <label for="flugar">Lugar de Nacimiento</label>
+                <input type="text" name="flugar" placeholder="Lugar de nacimiento" pattern="[a-zA-Z]+" required oninvalid="setCustomValidity('Lugar de nacimiento incorrecto')"><br>
+
+                <label for="ffecha">Fecha de nacimiento</label>
+                <input type="date" name="ffecha" required oninvalid="setCustomValidity('Fecha con formato incorrecto')"><br>
+
+                <label for="dni">DNI</label>
+                <input type="text" name="dni" placeholder="DNI" pattern="[0-9]{8}[a-zA-Z]?" required oninvalid="setCustomValidity('DNI con formato incorrecto')"><br>
+
+                <label for="poblacion">Poblacion</label>
+                <input type="text" name="poblacion" placeholder="Poblacion" pattern="[a-zA-Z]+" required oninvalid="setCustomValidity('Población incorrecta')"><br>
+    
+                <label for="provincia">Provincia</label>
+                <input type="text" name="provincia" placeholder="Provincia" pattern="[a-zA-Z]+" required oninvalid="setCustomValidity('Email con formato incorrecto')"><br>
+
+                <label for="ftelefono">Teléfono</label>
+                <input type="tel" name="ftelefono" placeholder="Número de teléfono" pattern="[0-9]+" maxlength="9" required oninvalid="setCustomValidity('Telefono con formato incorrecto')"><br>
+                
+                <label for="email">Email</label>
+                <input id="email" type="email" name="email" placeholder="Email" required oninvalid="setCustomValidity('Email con formato incorrecto')"><br>
+                
+                <input type="checkbox" id="privacidad" name="privacidad" value="privacidad" required>
+                <label for="privacidad">Politica de privacidad <small>Enviar este formulario implica conocer y consentir la política de privacidad</small></label><br>
+                <input type="checkbox" id="consentimiento" name="consentimiento" value="consentimiento" checked>
+                <label for="consentimiento">Uso de datos personales <small>Marca esta casilla si das tu consentimiento para usar tus datos para fines comerciales</small></label><br>
+            </fieldset>
+            <input type="submit" name="submit" value="Submit">
+        </form>
+    </body>
+</html>

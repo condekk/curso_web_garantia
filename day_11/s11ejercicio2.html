@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+        <style>
+            body{
+                text-align: center;
+                margin: auto;
+            }
+            .flex-container{
+                text-align: center;
+                display: flex;
+                justify-content: space-evenly;
+            }
+        </style>
+
+        <title>Formulario</title>
+
+    </head>
+    <body>
+        <form action="#" method="GET">
+            <div class="flex-container">
+                <fieldset>
+                    <legend>Datos</legend>
+
+                    <label for="matricula">Matricula</label><br>
+                    <input type="text" name="matricula" placeholder="0000AAA" pattern="[0-9]{4}[a-zA-Z]{4}" required><br>
+
+                    <label for="ISBN">ISBN</label><br>
+                    <input type="text" name="ISBN" placeholder="9780001112223334" pattern="(978|979)[0-9]{10}" required><br>
+
+                    <label for="contraseña">Contraseña</label><br>
+                    <input type="text" name="contraseña" placeholder="Contraseña" pattern="[a-zA-Z0-9!]+" required><br>
+
+                    <label for="curso">Curso</label><br>
+                    <input type="text" name="curso" placeholder="Curso" pattern="(ES|FR|EN)[a-zA-Z0-9]+" minlength="6" required><br>
+
+                    <label for="dni">DNI</label><br>
+                    <input type="text" name="dni" placeholder="DNI" pattern="[0-9]{8}[a-zA-Z]?" required><br>
+    
+                </fieldset>
+            </div>
+            <br>
+            <input id="submit" type="submit" value="Submit">
+        </form>
+    </body>
+    <footer></footer>
+</html>

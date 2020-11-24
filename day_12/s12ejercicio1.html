@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <form action="">
+            <fieldset>
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" placeholder="Nombre" pattern="[a-zA-Z]+" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="furl">URL</label>
+                    <input type="url" name="furl" placeholder="Escribe la URL de tu página web personal">
+                </div>
+                <div class="form-group">
+                    <label for="ffecha">Fecha</label>
+                    <input type="date" name="ffecha">
+                </div>
+                <div class="form-group">
+                    <label for="fhora">Hora</label>
+                    <input type="time" name="fhora">
+                </div>
+                <div class="form-group">
+                    <label for="fnumero">Número</label>
+                    <input type="number" name="fnumero" min="-10" max="10">
+                </div>
+                <div class="form-group">
+                    <label for="ftelefono">Teléfono</label>
+                    <input type="tel" name="ftelefono">
+                </div>
+                <div class="form-group">
+                    <label for="festudios">Estudios</label>
+                    <input list="festudios" name="festudios">
+                    <datalist id="festudios">
+                        <option value="Primaria">Primaria</option>
+                        <option value="Secundaria">Secundaria</option>
+                        <option value="Bachillerato">Bachillerato</option>
+                        <option value="Grado Medio">Grado Medio</option>
+                        <option value="Grado Superior">Grado Superior</option>
+                        <option value="Grado Universitario">Grado Universitario</option>
+                    </datalist>
+                </div>
+                <div class="form-group">
+                    <label for="fcolor">Color favorito</label>
+                    <input type="color" name="fcolor">
+                </div>
+            </fieldset>
+            <input type="submit" name="submit" value="Submit">
+        </form>
+    </body>
+</html>

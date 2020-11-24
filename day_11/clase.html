@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+        <style>
+            body{
+                background-color: darkslategrey;
+                color: whitesmoke;
+            }
+        </style>
+
+    </head>
+    <body>
+        <form action="">
+            <fieldset>
+                <label for="fichero">Archivos</label><br>
+                <input type="file" name="fichero" accept=".pdf, .docx"><br>
+
+                <label for="imagen">Imagen</label><br>
+                <input type="image" src="img/potion-2217630_640.jpg" onclick="alert('Hola mundo')"><br>
+
+                <label id="textarea-label" for="textarea">Comentario</label><br>
+                <textarea name="textarea" id="textarea" cols="50" rows="4"></textarea><br>
+
+                <table>
+                    <tr>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </table>
+            </fieldset>
+            <fieldset>
+                <legend>Datos de entrega</legend>
+                <label for="nombre">Nombre</label><br>
+                <input type="text" name="nombre" placeholder="Nombre" readonly="true" value="Nombre" required><br>
+
+                <label for="direccion">Direccion</label><br>
+                <input type="text" name="direccion" placeholder="Direccion" required><br>
+
+                <label for="telefono">Telefono de contacto</label><br>
+                <input type="number" name="telefono" placeholder="Telefono" required><br>
+
+                <label for="cp">Código postal</label><br>
+                <input type="text" name="cp" placeholder="00000" minlength="5" maxlength="5" required><br>
+
+                <label id="textarea-label" for="textarea">Instrucciones especiales</label><br>
+                <textarea name="textarea" id="textarea" cols="50" rows="4"></textarea><br>
+            </fieldset>
+            <fieldset>
+                <legend>Método de pago</legend>
+                <select id="dropdown" name="dropdown">
+                    <option value="">Elija un método de pago</option> 
+                    <option value="efectivo">Efectivo</option>
+                    <option value="tarjeta">Tarjeta</option>
+                </select><br>
+            </fieldset>
+
+            <label for="email">email</label>
+            <input type="email" name="email">
+
+            <label for="numero">numero</label>
+            <input type="number" name="numero">
+
+            <br>
+            <input type="submit" name="submit" value="Submit">
+        </form>
+    </body>
+    <footer></footer>
+</html>

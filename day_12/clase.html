@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <style>
+            body{
+                background-color: darkslategrey;
+                padding: 6px;
+            }
+            form input:required{
+                border: 2px solid blueviolet;
+                background: #fff url(img/required.png) no-repeat 98% center;
+            }
+            form input:focus:valid{
+                border: 2px solid greenyellow;
+                background: #fff url(img/valid.png) no-repeat 98% center;
+            }
+            form input::focus:invalid{
+                border: 2px solid red;
+                background: #fff url(img/invalid.png) no-repeat 98% center;
+            }
+            form input[type="email"]:focus:valid{
+                border-color: blue;
+            }
+            #nombre:required{
+                border: 2px solid pink;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="">
+            <fieldset>
+                <div class="form-group">
+                    <label for="fcolor">Color</label><br>
+                    <input type="color" name="fcolor"><br>
+                </div>
+
+                <label for="femail">Email</label><br>
+                <input type="email" name="femail"><br>
+
+                <label for="furl">URL</label><br>
+                <input type="url" name="furl"><br>
+
+                <label for="listado">Datalist</label><br>
+                <input list="navegadores" name="listado" required><br>
+                    <datalist id="navegadores">
+                        <option value="Chrome">Chrome</option>
+                        <option value="Firefox">Firefox</option>
+                        <option value="Internet Explorer">Internet Explorer</option>
+                        <option value="Opera">Opera</option>
+                        <option value="Safari">Safari</option>
+                        <option value="Microsoft Edge">Microsoft Edge</option>
+                    </datalist>
+                
+                <div class="form-group">
+                    <label for="dni">DNI</label><br>
+                    <input type="text" name="dni" placeholder="DNI" pattern="[0-9]{8}[a-zA-Z]?" required class="form-control"><br>
+                </div>
+
+                <div class="form-group">
+                    <label for="apellidos">Apellidos</label><br>
+                    <input type="text" name="apellidos" placeholder="Apellidos" pattern="[a-zA-Z]+" maxlength="40" required oninvalid="setCustomValidity('El apellido no tiene formato correcto')"><br>
+                </div>    
+
+                <label id="nombre" for="nombre">Nombre</label><br>
+                <input type="text" name="nombre" placeholder="Nombre" pattern="[a-zA-Z]+" maxlength="40" required oninvalid="setCustomValidity('El nombre no tiene formato correcto')"><br>
+
+                <div class="form-group">
+                    <label id="radio-label" for="radio">Would you recommend freeCodeCamp to a friend?</label><br>
+                    <div id="radio">
+                        <input type="radio" id="definitely" name="radio" value="definitely">
+                        <label for="definitely">Definitely</label><br>
+                        <input type="radio" id="maybe" name="radio" value="maybe">
+                        <label for="maybe">Maybe</label><br>
+                        <input type="radio" id="notsure" name="radio" value="notsure">
+                        <label for="notsure">Not sure</label> 
+                    </div><br>
+                </div>
+
+                <label for="checkbox-label" for="checkbox">What would you like to see improved? <small>(Check all that apply)</small></label><br>
+                <div class="form-check-inline" id="checkbox">
+                    <input type="checkbox" id="frontend" name="checkbox" value="frontend">
+                    <label for="frontend">Front-end Projects</label><br>
+                    <input type="checkbox" id="backend" name="checkbox" value="backend">
+                    <label for="backend">Back-end Projects</label><br>
+                    <input type="checkbox" id="datavis" name="checkbox" value="datavis">
+                    <label for="datavis">Data Visualization</label><br>
+                    <input type="checkbox" id="challenges" name="checkbox" value="challenges">
+                    <label for="challenges">Challenges</label><br>
+                    <input type="checkbox" id="opensource" name="checkbox" value="opensource">
+                    <label for="opensource">Open Source Community</label><br>
+                    <input type="checkbox" id="gitter" name="checkbox" value="gitter">
+                    <label for="gitter">Gitter help rooms</label><br>
+                    <input type="checkbox" id="videos" name="checkbox" value="videos">
+                    <label for="videos">Videos</label><br>
+                    <input type="checkbox" id="citymeet" name="checkbox" value="citymeet">
+                    <label for="citymeet">City Meetups</label><br>
+                    <input type="checkbox" id="wiki" name="checkbox" value="wiki">
+                    <label for="wiki">Wiki</label><br>
+                    <input type="checkbox" id="forum" name="checkbox" value="forum">
+                    <label for="forum">Forum</label><br>
+                    <input type="checkbox" id="additionalcourses" name="checkbox" value="additionalcourses">
+                    <label for="additionalcourses">Additional Courses</label><br>
+                </div><br>
+
+            </fieldset>
+            <br>
+            <input type="submit" name="submit" value="Submit">
+        </form>
+    </body>
+    <footer></footer>
+</html>

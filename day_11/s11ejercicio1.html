@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+        <style>
+            body{
+                text-align: center;
+                margin: auto;
+            }
+            .flex-container{
+                text-align: center;
+                display: flex;
+                justify-content: space-evenly;
+            }
+        </style>
+
+        <title>Formulario</title>
+
+    </head>
+    <body>
+        <form action="#" method="GET">
+            <div class="flex-container">
+                <fieldset>
+                    <legend>Datos Personales</legend>
+    
+                    <label for="curso">Curso</label><br>
+                    <input type="text" name="curso" placeholder="Curso" pattern="([a-zA-Z]{4}[0-9]{1})" required><br>
+    
+                    <label for="apellidos">Apellidos</label><br>
+                    <input type="text" name="apellidos" placeholder="Apellidos" pattern="[a-zA-Z]+" maxlength="40" required><br>
+    
+                    <label for="nombre">Nombre</label><br>
+                    <input type="text" name="nombre" placeholder="Nombre" pattern="[a-zA-Z]+" maxlength="40" required><br>
+    
+                    <label for="dni">DNI</label><br>
+                    <input type="text" name="dni" placeholder="DNI" pattern="([0-9]{8}[[a-zA-Z]]{1})" required><br>
+    
+                    <label for="profesion">Profesion</label><br>
+                    <input type="text" name="profesion" placeholder="Profesion" required><br>
+    
+                    <input type="checkbox" name="estudiante">
+                    <label for="estudiante">Estudiante</label><br>
+    
+                    <label for="titulacion">Titulacion</label><br>
+                    <input type="text" name="titulacion" placeholder="Titulacion" required><br>
+    
+                    <label id="textarea-label" for="textarea">Comentario</label><br>
+                    <textarea name="textarea" id="textarea" cols="50" rows="4"></textarea><br>
+                </fieldset>
+                <fieldset>
+                    <legend>Datos de Contacto</legend>
+    
+                    <label for="domicilio">Domicilio</label><br>
+                    <input type="text" name="domicilio" placeholder="Domicilio" required><br>
+    
+                    <label for="poblacion">Poblacion</label><br>
+                    <input type="text" name="poblacion" placeholder="Poblacion" pattern="[a-zA-Z]+" required><br>
+    
+                    <label for="provincia">Provincia</label><br>
+                    <input type="text" name="provincia" placeholder="Provincia" pattern="(Alicante)|(Valencia)|(Castellon)" required><br>
+    
+                    <label for="cp">Codigo postal</label><br>
+                    <input type="text" name="cp" placeholder="Codigo postal" pattern="[0-9]" maxlength="5" required><br>
+    
+                    <label for="email">Email</label><br>
+                    <input type="email" name="email" placeholder="Email" required><br>
+    
+                    <label for="telefono">Telefono de contacto</label><br>
+                    <input type="tel" name="telefono" placeholder="Telefono" pattern="[0-9]" maxlength="9" required><br>
+    
+                </fieldset>
+            </div>
+            <br>
+            <input id="submit" type="submit" value="Submit">
+        </form>
+    </body>
+    <footer></footer>
+</html>
