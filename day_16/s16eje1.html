@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script type="text/javascript">
+
+            function limpiaCuadro() {
+                document.getElementsByName("textarea")[0].value = '';
+            }
+            function validacion() {
+                var formC = true;
+
+                var node_list = document.getElementsByTagName('input');
+                for (var i = 0; i < node_list.length; i++) {
+                    var node = node_list[i];
+
+                    if (node.getAttribute('type') == 'text') {
+                        if (node.value == ""){
+                            alert("Hay un campo de texto vacio");
+                            formC = false;
+                        }
+                    }
+                }
+
+                var seleccionVelocidad = document.getElementById("velocidad").selectedIndex;
+                if (seleccionVelocidad == 0 || seleccionVelocidad == null){
+                    alert("No hay velocidad seleccionada");
+                    formC = false;
+                }
+
+                var seleccionEmpresa = document.getElementById("empresa").selectedIndex;
+                if (seleccionEmpresa == 0 || seleccionEmpresa == null){
+                    alert("No hay empresa seleccionada");
+                    formC = false;
+                }
+
+                seleccionVelocidad = document.getElementById("velocidad").value;
+                seleccionEmpresa = document.getElementById("empresa").value;
+                if (seleccionEmpresa == 'jazztel' && seleccionVelocidad == '100_megas') {
+                    alert("Esa oferta no está disponible");
+                    formC = false;
+                }
+
+                var seleccionRadio = false;
+                var opciones = document.getElementsByName("red");
+                var posicion = 0;
+                for (var i = 0; i < opciones.length; i++){
+                    if (opciones[i].checked == true){
+                        seleccionRadio = true;
+                        posicion = i;
+                        break;
+                    }
+                }
+                if (seleccionRadio == false){
+                    alert("No ha seleccionado oferta red");
+                    formC = false;
+                }
+
+                var seleccionRadio2 = false;
+                var opciones2 = document.getElementsByName("minutos");
+                var posicion2 = 0;
+                for (var i = 0; i < opciones2.length; i++){
+                    if (opciones2[i].checked == true){
+                        seleccionRadio2 = true;
+                        posicion2 = i;
+                        break;
+                    }
+                }
+                if (seleccionRadio == false){
+                    alert("No ha seleccionado oferta minutos");
+                    formC = false;
+                }
+
+                var seleccionCheckbox = document.getElementsByName("complemento");
+                var cont = 0;
+                for (var i = 0; i < seleccionCheckbox.length; i++){
+                    if (seleccionCheckbox[i].checked == true){
+                        cont++;
+                    }
+                }
+                if (cont > 2) {
+                    alert("No se pueden hacer más de 2 selecciones");
+                }
+
+                var numTel = document.getElementById("telefono").value;
+                if (!(/^\d{9}$/).test(numTel)) {
+                    alert("No tiene 9 caracteres");
+                    formC = false;
+                }
+
+                var numDni = document.getElementById("dni").value;
+                if (!(/^\d{8}[a-zA-Z]?$/).test(numDni)) {
+                    alert("El DNI no es valido");
+                    formC = false;
+                }
+
+                var seleccionRed = document.getElementsByName("red");
+                var seleccionMinutos = document.getElementsByName("minutos");
+                if (seleccionRed[posicion].value == "red5g" && seleccionMinutos[posicion2].value != "tarifa_plana") {
+                    alert("5G solo es válido con Tarifa plana");
+                    formC = false;
+                }
+
+                if (formC == true) {
+                    document.getElementById("fecha").valueAsNumber = new Date().getTime();
+                }
+            }
+
+        </script>
+
+        <style>
+            h1{
+                margin-top: 3%;
+                margin-bottom: auto;
+            }
+            body{
+                text-align: center;
+                background-color: darkslategrey;
+                color: lightgrey;
+            }
+        </style>
+
+        <title>S16 E1</title>
+        
+        <h1 id="title">Sesion 16 Ejercicio 1</h1>
+    </head>
+    <body>
+        <form id="form" action="">
+            <legend>Datos Personales</legend>
+            <fieldset name="datos_personales">
+                <label for="dni">DNI</label><br>
+                <input type="text" name="dni" id="dni"><br>
+                <label for="nombre">Nombre</label><br>
+                <input type="text" name="nombre"><br>
+                <label for="apellidos">Apellidos</label><br>
+                <input type="text" name="apellidos"><br>
+                <label for="email">Email</label><br>
+                <input type="text" name="email"><br>
+                <label for="telefono">Telefono</label><br>
+                <input type="text" name="telefono" id="telefono"><br>
+            </fieldset><br>
+
+            <legend>Velocidad</legend>
+            <fieldset>
+                <select name="velocidad" id="velocidad">
+                    <option value="">Selecciona una velocidad</option> 
+                    <option value="100_megas">100 Megas</option>
+                    <option value="300_megas">300 Megas</option>
+                    <option value="1000_megas">1000 Megas</option>
+                </select>
+            </fieldset><br>
+
+            <legend>Empresa</legend>
+            <fieldset>
+                <select name="empresa" id="empresa">
+                    <option value="">Selecciona una velocidad</option> 
+                    <option value="movistar">Movistar</option>
+                    <option value="vodafone">Vodafone</option>
+                    <option value="jazztel">Jazztel</option>
+                </select>
+            </fieldset><br>
+
+            <legend>Observaciones</legend>
+            <fieldset>
+                <textarea name="textarea" cols="49" rows="6" onfocus="limpiaCuadro()">
+Introduce alguna observación
+                </textarea>
+            </fieldset><br>
+
+            <legend>Oferta Internet</legend>
+            <fieldset name="oferta_internet">
+                <input type="radio" name="red" value="red3g">
+                <label for="red3g">3G</label><br>
+                <input type="radio" name="red" value="red4g">
+                <label for="red4g">4G</label><br>
+                <input type="radio" name="red" value="red5g">
+                <label for="red5g">5G</label><br><br>
+
+                <input type="radio" name="minutos" value="150">
+                <label for="150">150 minutos</label><br>
+                <input type="radio" name="minutos" value="500">
+                <label for="500">500 minutos</label><br>
+                <input type="radio" name="minutos" value="tarifa_plana">
+                <label for="tarifa_plana">Tarifa Plana</label><br><br>
+
+                <input type="checkbox" name="complemento" value="cable_usb">
+                <label for="cable_usb">Cable USB 2.0</label><br>
+                <input type="checkbox" name="complemento" value="Auriculares">
+                <label for="Auriculares">Auriculares</label><br>
+                <input type="checkbox" name="complemento" value="funda_negra">
+                <label for="funda_negra">Funda negra</label><br>
+            </fieldset><br>
+
+            <input type="date" disabled="true" id="fecha"><br><br>
+
+            <input type="button" value="Validacion" onclick="validacion()"><br><br>
+
+            <input id="submit" type="submit" value="Submit">
+        </form>
+    </body>
+    <footer></footer>
+</html>

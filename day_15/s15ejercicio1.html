@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script type="text/javascript">
+            function validacion() {
+                var node_list = document.getElementsByTagName('input');
+                for (var i = 0; i < node_list.length; i++) {
+                    var node = node_list[i];
+
+                    if (node.getAttribute('type') == 'text') {
+                        if (node.value == ""){
+                            alert("Hay un campo de texto vacio");
+                        }
+                    }
+                }
+
+                var seleccionAsignatura = false;
+                var opciones = document.getElementsByName("asignatura");
+                var posicion = 0;
+                for (var i = 0; i < opciones.length; i++){
+                    if (opciones[i].checked == true){
+                        seleccionAsignatura = true;
+                        posicion = i;
+                        break;
+                    }
+                }
+                if (seleccionAsignatura == false) {
+                    alert("No hay ninguna asignatura elegida");
+                }
+
+                var seleccionAsignaturaL = document.getElementById("asignaturaL").selectedIndex;
+                if (seleccionAsignaturaL == 0 || seleccionAsignaturaL == null){
+                    alert("No hay una asignaturaL elegida");
+                }
+
+                var valorAsignaturaL = document.getElementById("asignaturaL");
+                if (opciones[posicion].value == ("asignatura" + valorAsignaturaL[seleccionAsignaturaL].value)) {
+                    alert("No puedes elegir la misma asignatura dos veces");
+                }
+
+                if (document.getElementsByName("fcolor").value == "#000000") {
+                    alert("No puede ser negro");
+                }
+
+                var seleccionCheckbox = document.getElementsByName("dia");
+                var cont = 0;
+                for (var i = 0; i < seleccionCheckbox.length; i++){
+                    if (seleccionCheckbox[i].checked == true){
+                        cont++;
+                    }
+                }
+                if (cont < 2) {
+                    alert("Hay que hacer un mínimo de 2 selecciones");
+                }
+
+                if (!(/^\d{9}$/).test(document.getElementById("telefono").value)) {
+                    alert("Tiene que tener 9 caracteres");
+                }
+
+                var seleccionLenguaje = false;
+                var opcionesL = document.getElementsByName("lenguaje");
+                for (var i = 0; i < opcionesL.length; i++){
+                    if (opcionesL[i].checked == true){
+                        seleccionLenguaje = true;
+                        break;
+                    }
+                }
+                if (seleccionLenguaje == false) {
+                    alert("No hay ningun lenguaje elegido");
+                }
+
+                if (!(/^\w+(\.es)$/).test(document.getElementById("email").value)) {
+                    alert("Tiene que acabar en .es");
+                }
+
+                if (document.getElementById("nombre").value != "Lorena") {
+                    alert("Tienes el nombre incorrecto");
+                }
+            }
+        </script>
+
+        <style>
+            h1{
+                margin-top: 3%;
+                margin-bottom: auto;
+            }
+            body{
+                text-align: center;
+                background-color: darkslategrey;
+                color: lightgrey;
+            }
+        </style>
+
+        <title>S15 E1</title>
+        
+        <h1 id="title">Sesion 15 Ejercicio 1</h1>
+    </head>
+    <body>
+        <form id="form" action="">
+            <legend>Asignatura</legend><br>
+            <fieldset>
+                <input type="radio" name="asignatura" value="asignaturalengua">
+                <label for="asignaturalengua">Lengua</label><br>
+                <input type="radio" name="asignatura" value="asignaturamatematicas">
+                <label for="asignaturamatematicas">Matemáticas</label><br>
+                <input type="radio" name="asignatura" value="asignaturahistoria">
+                <label for="asignaturahistoria">Historia</label><br>
+                <input type="radio" name="asignatura" value="asignaturageografia">
+                <label for="asignaturageografia">Geografía</label><br>
+            </fieldset><br>
+
+            <legend>Lista desplegable</legend><br>
+            <fieldset>
+                <select name="asignaturaL" id="asignaturaL">
+                    <option value="">Selecciona una asignatura</option> 
+                    <option value="lengua">Lengua</option>
+                    <option value="matematicas">Matemáticas</option>
+                    <option value="historia">Historia</option>
+                    <option value="geografia">Geografía</option>
+                </select>
+            </fieldset><br>
+
+            <fieldset>
+                <label for="fcolor">Color</label><br>
+                <input type="color" name="fcolor">
+            </fieldset><br>
+
+            <fieldset>
+                <label for="instituto">Instituto</label><br>
+                <input type="text" name="insituto" value="Instituto"><br>
+                <label for="estudios">Estudios elegidos</label><br>
+                <input type="text" name="estudios" value="Estudios elegidos">
+            </fieldset><br>
+
+            <fieldset>
+                <label for="fichero">Fichero</label>
+                <input type="file" name="fichero">
+            </fieldset><br>
+
+            <legend>Día</legend><br>
+            <fieldset>
+                <input type="checkbox" name="dia" value="dialunes">
+                <label for="dialunes">Lunes</label><br>
+                <input type="checkbox" name="dia" value="diamartes">
+                <label for="diamartes">Martes</label><br>
+                <input type="checkbox" name="dia" value="diamiercoles">
+                <label for="diamiercoles">Miércoles</label><br>
+                <input type="checkbox" name="dia" value="diajueves">
+                <label for="diajueves">Jueves</label><br>
+                <input type="checkbox" name="dia" value="diaviernes">
+                <label for="diaviernes">Viernes</label><br>
+                <input type="checkbox" name="dia" value="diasabado">
+                <label for="diasabado">Sabado</label><br>
+                <input type="checkbox" name="dia" value="diadomingo">
+                <label for="diadomingo">Domingo</label><br>
+            </fieldset><br>
+
+            <fieldset>
+                <label for="textarea">Textarea</label><br>
+                <textarea name="textarea" cols="45" rows="6">Utilice este recuadro por favor</textarea>
+            </fieldset><br>
+
+            <legend>Lenguaje</legend><br>
+            <fieldset>
+                <input type="radio" name="lenguaje" value="lenguajejava">
+                <label for="lenguajejava">Java</label><br>
+                <input type="radio" name="lenguaje" value="lenguajepython">
+                <label for="lenguajepython">Python</label><br>
+                <input type="radio" name="lenguaje" value="lenguajehtml">
+                <label for="lenguajehtml">HTML</label><br>
+                <input type="radio" name="lenguaje" value="lenguajevisual_basic">
+                <label for="lenguajevisual_basic">Visual Basic</label><br>
+                <input type="radio" name="lenguaje" value="lenguajecss">
+                <label for="lenguajecss">CSS</label><br>
+            </fieldset><br>
+
+            <fieldset>
+                <label for="nombre">Nombre</label><br>
+                <input type="text" name="nombre" id="nombre"><br>
+                <label for="apellidos">Apellidos</label><br>
+                <input type="text" name="apellidos"><br>
+                <label for="email">Email</label><br>
+                <input type="text" name="email" id="email"><br>
+                <label for="telefono">Telefono</label><br>
+                <input type="text" name="telefono" id="telefono"><br>
+            </fieldset><br>
+
+            <input type="button" value="Validacion" onclick="validacion()"><br><br>
+
+            <input id="submit" type="submit" value="Submit">
+        </form>
+    </body>
+    <footer></footer>
+</html>
