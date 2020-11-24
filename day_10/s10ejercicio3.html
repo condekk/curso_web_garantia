@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+
+        <style>
+            body{
+                text-align: center;
+                margin: auto;
+            }
+            .flex-container{
+                text-align: center;
+                display: flex;
+                justify-content: space-evenly;
+            }
+        </style>
+
+        <title>Pedido de pizza</title>
+
+    </head>
+    <body>
+        <form action="#" method="GET">
+            <legend>Pedido de Pizza</legend>
+            <fieldset>
+                <legend>La Pizza</legend>
+                <label for="checkbox-label" for="checkbox">Ingredientes</label><br>
+                <div id="checkbox">
+                    <input type="checkbox" id="queso" name="checkbox" value="queso">
+                    <label for="queso">Queso</label><br>
+                    <input type="checkbox" id="pimiento" name="checkbox" value="pimiento">
+                    <label for="pimiento">Pimiento</label><br>
+                    <input type="checkbox" id="cebolla" name="checkbox" value="cebolla">
+                    <label for="cebolla">Cebolla</label><br>
+                </div><br>
+
+                <label id="radio-label" for="radio">Tamaño</label><br>
+                <div id="radio">
+                    <input type="radio" id="small" name="radio" value="small">
+                    <label for="small">Pequeña</label><br>
+                    <input type="radio" id="medium" name="radio" value="medium">
+                    <label for="medium">Mediana</label><br>
+                    <input type="radio" id="big" name="radio" value="big">
+                    <label for="big">Grande</label> 
+                </div><br>
+            </fieldset>
+            <fieldset>
+                <legend>Datos de entrega</legend>
+                <label for="nombre">Nombre</label><br>
+                <input type="text" name="nombre" placeholder="Nombre" required><br>
+
+                <label for="direccion">Direccion</label><br>
+                <input type="text" name="direccion" placeholder="Direccion" required><br>
+
+                <label for="telefono">Telefono de contacto</label><br>
+                <input type="number" name="telefono" placeholder="Telefono" required><br>
+
+                <label id="textarea-label" for="textarea">Instrucciones especiales</label><br>
+                <textarea name="textarea" id="textarea" cols="50" rows="4"></textarea>
+                </textarea><br>
+            </fieldset>
+            <fieldset>
+                <legend>Método de pago</legend>
+                <select id="dropdown" name="dropdown">
+                    <option value="">Elija un método de pago</option> 
+                    <option value="efectivo">Efectivo</option>
+                    <option value="tarjeta">Tarjeta</option>
+                </select><br>
+            </fieldset>
+            <input id="submit" type="submit" value="Ok">
+        </form>
+    </body>
+    <footer></footer>
+</html>
