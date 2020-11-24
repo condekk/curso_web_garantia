@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script type="text/javascript">
+
+            /*function limpiaCuadro() {
+                document.getElementsByName("textarea")[0].value = '';
+            }*/
+            function showSeguro() {
+                var seguroValue = document.getElementById("seguro")[document.getElementById("seguro").selectedIndex].value;
+                if (seguroValue == "si") {
+                    document.getElementById("nombreSeguro").hidden = false;
+                    document.getElementById("nombreSeguro-id").hidden = false;
+                    document.getElementById("nombreSeguro").required = true;
+                } else {
+                    document.getElementById("nombreSeguro").hidden = true;
+                    document.getElementById("nombreSeguro-id").hidden = true;
+                    document.getElementById("nombreSeguro").required = false;
+                }
+            }
+
+            function showEnfermedad() {
+                var enfermedadValue = document.getElementById("enfermedad")[document.getElementById("enfermedad").selectedIndex].value;
+                if (enfermedadValue == "si") {
+                    document.getElementById("nombreEnfermedad").hidden = false;
+                    document.getElementById("nombreEnfermedad-id").hidden = false;
+                    document.getElementById("nombreEnfermedad").required = true;
+                } else {
+                    document.getElementById("nombreEnfermedad").hidden = true;
+                    document.getElementById("nombreEnfermedad-id").hidden = true;
+                    document.getElementById("nombreEnfermedad").required = false;
+                }
+            }
+
+            function checkTime() {
+                var hInicio = document.getElementById("hInicio").value;
+                var hFinal = document.getElementById("hFinal").value;
+                if (hFinal < hInicio) {
+                    alert("La hora final no puede ser antes de la hora de inicio")
+                }
+            }
+
+            function validacion() {
+
+                var seleccionGenero = document.getElementById("genero").selectedIndex;
+                if (seleccionGenero == 0 || seleccionGenero == null){
+                    alert("No hay un genero seleccionado");
+                }
+
+                var seleccionSeguro = document.getElementById("seguro").selectedIndex;
+                if (seleccionSeguro == 0 || seleccionSeguro == null){
+                    alert("No ha indicado si dispone de seguro");
+                }
+
+                var seleccionEnfermedad = document.getElementById("enfermedad").selectedIndex;
+                if (seleccionEnfermedad == 0 || seleccionEnfermedad == null){
+                    alert("No ha indicado si tiene alguna enfermedad");
+                }
+
+                var seleccionIdiomas = document.getElementsByName("idiomas");
+                var cont = 0;
+                for (var i = 0; i < seleccionIdiomas.length; i++){
+                    if (seleccionIdiomas[i].checked == true){
+                        cont++;
+                    }
+                }
+                if (cont < 1) {
+                    alert("Tienes que seleccionar al menos 1 idioma");
+                }
+
+                var seleccionDias = document.getElementsByName("dias");
+                var cont = 0;
+                for (var i = 0; i < seleccionDias.length; i++){
+                    if (seleccionDias[i].checked == true){
+                        cont++;
+                    }
+                }
+                if (cont < 2) {
+                    alert("Tienes que seleccionar al menos 2 días");
+                }
+            }
+        </script>
+
+        <style>
+            h1{
+                margin-top: 3%;
+                margin-bottom: auto;
+            }
+            body{
+                text-align: center;
+                background-color: darkslategrey;
+                color: lightgrey;
+            }
+        </style>
+
+        <title>S17 E1</title>
+        
+        <h1 id="title">Sesion 17 Ejercicio 1</h1>
+    </head>
+    <body>
+        <form id="form" action="">
+            <legend>Formulario</legend>
+            <fieldset>
+                <legend>Datos personales</legend>
+                <label for="nombre">Nombre</label><br>
+                <input type="text" name="nombre" pattern="^[a-zA-Z]+$" required><br>
+                <label for="apellidos">Apellidos</label><br>
+                <input type="text" name="apellidos" pattern="^[a-zA-Z]+$" required><br>
+
+                <label for="fecha">Fecha de nacimiento</label><br>
+                <input type="date" name="fecha" required><br>
+
+                <label for="genero">Genero</label><br>
+                <select name="genero" id="genero">
+                    <option value="">Elija una opcion</option>
+                    <option value="hombre">Hombre</option>
+                    <option value="mujer">Mujer</option>
+                </select><br>
+
+                <label for="ocupacion">Ocupacion</label><br>
+                <input type="text" name="ocupacion" pattern="^[a-zA-Z]+$" required><br>
+            </fieldset><br>
+
+            <fieldset>
+                <legend>Datos de contacto</legend>
+                <label for="estado">Estado</label><br>
+                <input type="text" name="estado" required><br>
+                <label for="ciudad">Ciudad</label><br>
+                <input type="text" name="ciudad" required><br>
+                <label for="calle">Calle</label><br>
+                <input type="text" name="calle" required><br>
+
+                <label for="telefono">Telefono</label><br>
+                <input type="text" name="telefono" pattern="^\d{9}$" required><br>
+
+                <label for="facebook">Facebook</label><br>
+                <input type="url" name="facebook"><br>
+
+                <label for="email">Email</label><br>
+                <input type="text" name="email" pattern="^\w+@\w+(\.es)$"><br>
+            </fieldset><br>
+
+            <fieldset>
+                <legend>Datos medicos</legend>
+                <label for="seguro">Seguro medico</label><br>
+                <select name="seguro" id="seguro" onload="showSeguro()" onchange="showSeguro()">
+                    <option value="">Elija una opcion</option>
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                </select><br>
+                <label for="nombreSeguro" id="nombreSeguro-id" hidden required=false>Nombre del seguro medico</label><br>
+                <input type="text" name="nombreSeguro" id="nombreSeguro" hidden required=false><br>
+
+                <label for="enfermedad">Enfermedad</label><br>
+                <select name="enfermedad" id="enfermedad" onload="showEnfermedad()" onchange="showEnfermedad()">
+                    <option value="">Elija una opcion</option>
+                    <option value="si">Si</option>
+                    <option value="no">No</option>
+                </select><br>
+                <label for="nombreEnfermedad" id="nombreEnfermedad-id" hidden required=false>Nombre de la enfermedad</label><br>
+                <input type="text" name="nombreEnfermedad" id="nombreEnfermedad" hidden required=false><br>
+            </fieldset><br>
+
+            <fieldset>
+                <legend>Idiomas</legend>
+                <input type="checkbox" name="idiomas" value="coreano">
+                <label for="coreano">Coreano</label><br>
+                <input type="checkbox" name="idiomas" value="frances">
+                <label for="frances">Frances</label><br>
+                <input type="checkbox" name="idiomas" value="ingles">
+                <label for="ingles">Ingles</label><br>
+                <input type="checkbox" name="idiomas" value="italiano">
+                <label for="italiano">Italiano</label><br>
+                <input type="checkbox" name="idiomas" value="ruso">
+                <label for="ruso">Ruso</label><br>
+                <input type="checkbox" name="idiomas" value="arabe">
+                <label for="arabe">Arabe</label><br>
+            </fieldset><br>
+
+            <fieldset>
+                <legend>Dias de la semana</legend>
+                <input type="checkbox" name="dias" value="lunes">
+                <label for="lunes">Lunes</label><br>
+                <input type="checkbox" name="dias" value="martes">
+                <label for="martes">Martes</label><br>
+                <input type="checkbox" name="dias" value="miercoles">
+                <label for="miercoles">Miercoles</label><br>
+                <input type="checkbox" name="dias" value="jueves">
+                <label for="jueves">Jueves</label><br>
+                <input type="checkbox" name="dias" value="viernes">
+                <label for="viernes">Viernes</label><br>
+                <input type="checkbox" name="dias" value="sabado">
+                <label for="sabado">Sabado</label><br>
+                <input type="checkbox" name="dias" value="domingo">
+                <label for="domingo">Domingo</label><br>
+            </fieldset><br>
+
+            <fieldset>
+                <legend>Horarios</legend>
+                <label for="hInicio">Hora de inicio</label><br>
+                <input type="time" name="hInicio" id="hInicio" onchange="checkTime()" required><br>
+                <label for="hFinal">Hora final</label><br>
+                <input type="time" name="hFinal" id="hFinal" onchange="checkTime()" required><br>
+            </fieldset><br>
+
+            <fieldset>
+                <legend>Comentarios adicionales</legend>
+                <textarea name="comentarios" id="comentarios" cols="50" rows="5"></textarea>
+            </fieldset><br>
+
+            <input type="button" value="Validacion" onclick="validacion()"><br><br>
+
+            <input id="submit" type="submit" value="Submit">
+        </form>
+    </body>
+    <footer></footer>
+</html>
