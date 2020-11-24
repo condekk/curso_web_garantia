@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script type="text/javascript">
+            function formula() {
+                var seleccionSexo = document.getElementById("sexo").selectedIndex;
+                if (seleccionSexo == 0 || seleccionSexo == null){
+                    alert("No hay un sexo seleccionado");
+                }
+                var altura = parseInt(document.getElementById("altura").value);
+                var peso = parseInt(document.getElementById("peso").value);
+                var edad = parseInt(document.getElementById("edad").value);
+
+                var sexoValue = document.getElementById("sexo")[document.getElementById("sexo").selectedIndex].value;
+                if (sexoValue == "mujer") {
+                    var resultado = (50+((altura-150)/4)*3+(edad-20)/4)*0.9;
+                    alert("Su peso de referencia es " + resultado);
+                } else if (sexoValue == "hombre") {
+                    var resultado = 50+((altura-150)/4)*3+(edad-20)/4;
+                    alert("Su peso de referencia es " + resultado);
+                    if (peso > resultado) {
+                        alert("Te sobran " + (peso - resultado));
+                    } else {
+                        alert("Te faltan " + (resultado - peso));
+                    }
+                } else {
+                    alert("La formula no funciona si no indicas el sexo");
+                    if (peso > resultado) {
+                        alert("Te sobran " + (peso - resultado));
+                    } else {
+                        alert("Te faltan " + (resultado - peso));
+                    }
+                }
+            }
+        </script>
+
+        <style>
+            h1{
+                margin-top: 3%;
+                margin-bottom: auto;
+            }
+            body{
+                text-align: center;
+                background-color: darkslategrey;
+                color: lightgrey;
+            }
+        </style>
+
+        <title>S18 E5</title>
+        
+        <h1 id="title">Sesion 18 Ejercicio 5</h1>
+    </head>
+    <body>
+        <form id="form" action="">
+            <fieldset>
+                <label for="sexo">Sexo</label><br>
+                <select name="sexo" id="sexo">
+                    <option value="">Elija una opcion</option>
+                    <option value="hombre">Hombre</option>
+                    <option value="mujer">Mujer</option>
+                </select><br>
+                <label for="edad">Edad</label><br>
+                <input type="number" name="edad" id="edad"><br>
+                <label for="altura">Altura</label><br>
+                <input type="number" name="altura" id="altura"><br>
+                <label for="peso">Peso</label><br>
+                <input type="number" name="peso" id="peso"><br>
+            </fieldset><br>
+
+            <input type="button" value="Formula" onclick="formula()">
+        </form>
+    </body>
+    <footer></footer>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script type="text/javascript">
+            function suma() {
+                var num1 = parseInt(document.getElementById("num1").value);
+                var num2 = parseInt(document.getElementById("num2").value);
+
+                var resultado = num1 + num2;
+                alert(num1 + " + " + num2 + " = " + resultado);
+            }
+            function resta() {
+                var num1 = parseInt(document.getElementById("num1").value);
+                var num2 = parseInt(document.getElementById("num2").value);
+
+                var resultado = num1 - num2;
+                alert(num1 + " - " + num2 + " = " + resultado);
+            }
+            function mult() {
+                var num1 = parseInt(document.getElementById("num1").value);
+                var num2 = parseInt(document.getElementById("num2").value);
+
+                var resultado = num1 * num2;
+                alert(num1 + " * " + num2 + " = " + resultado);
+            }
+            function div() {
+                var num1 = parseInt(document.getElementById("num1").value);
+                var num2 = parseInt(document.getElementById("num2").value);
+
+                var resultado = num1 / num2;
+                alert(num1 + " / " + num2 + " = " + resultado);
+            }
+        </script>
+
+        <style>
+            h1{
+                margin-top: 3%;
+                margin-bottom: auto;
+            }
+            body{
+                text-align: center;
+                background-color: darkslategrey;
+                color: lightgrey;
+            }
+        </style>
+
+        <title>S18 E6</title>
+        
+        <h1 id="title">Sesion 18 Ejercicio 6</h1>
+    </head>
+    <body>
+        <form id="form" action="">
+            <fieldset>
+                <label for="num1">Numero 1</label><br>
+                <input type="number" name="num1" id="num1"><br>
+                <label for="num2">Numero 2</label><br>
+                <input type="number" name="num2" id="num2"><br>
+            </fieldset><br>
+
+            <input type="button" value="Suma" onclick="suma()">
+            <input type="button" value="Resta" onclick="resta()">
+            <input type="button" value="Mult" onclick="mult()">
+            <input type="button" value="Div" onclick="div()">
+        </form>
+    </body>
+    <footer></footer>
+</html>
