@@ -1,0 +1,31 @@
+body{
+    background-color:grey;
+    text-align: justify;
+    font-family:"Blackadder ITC";
+    font-size:22;
+}
+.stark{
+    color:white;
+    width:30%;
+    position:absolute;
+    left:1.5%;
+}
+.lannister{
+    color:rgb(255,0,0,0.5);
+    width:30%;
+    position:absolute;
+    left:34.5%;
+
+}
+.targaryen{
+    color:black;
+    width:30%;
+    position:absolute;
+    left:67.5%;
+}
+h1{
+    font-family:"Old English Text MT";
+}
+h2{
+    font-family:"Old English Text MT";
+}
