@@ -1,0 +1,42 @@
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: rgb(105, 105, 105); /* 333F */
+}
+
+li{
+    float: left;
+}
+
+li a .dropboton{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 14px 16px;
+    text-align: center;
+}
+
+li a:hover, .menudrop:hover .dropboton{
+    background-color: red;
+}
+
+.menudrop-contenido{
+    display: none;
+    position: absolute;
+    background: grey;
+    min-width: 160px;
+}
+
+.menudrop-contenido a{
+    display: block;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    text-align: left;
+}
+
+.menudrop:hover .menudrop-contenido{
+    display: block;
+}
