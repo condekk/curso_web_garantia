@@ -9,18 +9,81 @@
         <script src="js/bootstrap.min.js"></script>
 
         <style>
+            body {
+                padding-top: 5%;
+                background-color: steelblue;
+                color: white;
+            }
+            #document-nav{
+                position: fixed;
+                top: 5%;
+                left: 1.5%;
+            }
+
+            .titulo {
+                font-size: larger;
+                padding-bottom: 1%;
+                padding-top: 1%;
+            }
+
+            #document-nav a {
+                color: lightcoral;
+            }
+
+            #document-nav a:hover {
+                color: whitesmoke;
+            }
+
             .codep{
                 background-color: lightgrey;
                 padding: 6px;
             }
+            
             @media screen {
-                #navbar{
+                #document-nav{
                     position: fixed;
+                    top: 10%;
                     left: 1.5%;
                 }
                 body{
-                    margin-left: 20%;
+                    padding-top: 5%;
                 }
+            }
+            
+            main {
+                margin-left: 22%;
+            }
+
+            #navbar ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+            }
+
+            #navbar li {
+                float: left;
+                width: 20%;
+            }
+
+            #navbar li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            /* Change the link color to #111 (black) on hover */
+            #navbar li a:hover {
+                background-color: #111;
+            }
+
+            #navbar {
+                position: fixed;
+                top: 0;
+                width: 100%;
             }
         </style>
 
@@ -29,21 +92,32 @@
     </head>
 
     <body>
-        <nav id="navbar">
+        <header>
+            <nav id="navbar">
+                <ul>
+                    <li><a class="nav-link" href="https://institut.es/CursoWeb/alu4/index.html">Index</a></li>
+                    <li><a class="nav-link" href="https://institut.es/CursoWeb/alu4/tribute.html">Tribute</a></li>
+                    <li><a class="nav-link" href="https://institut.es/CursoWeb/alu4/formulario.html">Formulario</a></li>
+                    <li><a class="nav-link" href="https://institut.es/CursoWeb/alu4/links.html">Links</a></li>
+                    <li><a class="nav-link" href="https://institut.es/CursoWeb/alu4/documento.html">Documento</a></li>
+                </ul>
+            </nav>
+        </header>
+        <nav id="document-nav">
             <header>JS Documentation</header>
             <ul>
-                <li><a class="nav-link" href="#Introduction">Introduction</a></li>
-                <li><a class="nav-link" href="#What_you_should_already_know">What you should already know</a></li>
-                <li><a class="nav-link" href="#JavaScript_and_Java">JavaScript and Java</a></li>
-                <li><a class="nav-link" href="#Hello_world">Hello world</a></li>
-                <li><a class="nav-link" href="#Variables">Variables</a></li>
-                <li><a class="nav-link" href="#Declaring_variables">Declaring variables</a></li>
-                <li><a class="nav-link" href="#Variable_scope">Variable scope</a></li>
-              </ul>
+                <li><a href="#Introduction">Introduction</a></li>
+                <li><a href="#What_you_should_already_know">What you should already know</a></li>
+                <li><a href="#JavaScript_and_Java">JavaScript and Java</a></li>
+                <li><a href="#Hello_world">Hello world</a></li>
+                <li><a href="#Variables">Variables</a></li>
+                <li><a href="#Declaring_variables">Declaring variables</a></li>
+                <li><a href="#Variable_scope">Variable scope</a></li>
+            </ul>
         </nav>
         <main id="main-doc">
             <section class="main-section" id="Introduction">
-                <header>Introduction</header>
+                <header class="titulo">Introduction</header>
                 <p>
                     JavaScript is a cross-platform, object-oriented scripting language. It is a small and lightweight language. Inside a host environment (for example, a web browser), JavaScript can be connected to the objects of its environment to provide programmatic control over them. 
                 </p>
@@ -58,7 +132,7 @@
                 </p>
             </section>
             <section class="main-section" id="What_you_should_already_know">
-                <header>What you should already know</header>
+                <header class="titulo">What you should already know</header>
                 <p>
                     This guide assumes you have the following basic background:
                     <li>
@@ -73,7 +147,7 @@
                 </p>
             </section>
             <section class="main-section" id="JavaScript_and_Java">
-                <header>JavaScript and Java</header>
+                <header class="titulo">JavaScript and Java</header>
                 <p>
                     JavaScript and Java are similar in some ways but fundamentally different in some others. The JavaScript language resembles Java but does not have Java's static typing and strong type checking. JavaScript follows most Java expression syntax, naming conventions and basic control-flow constructs which was the reason why it was renamed from LiveScript to JavaScript. 
                 </p>
@@ -85,7 +159,7 @@
                 </p>
             </section>
             <section class="main-section" id="Hello_world">
-                <header>Hello world</header>
+                <header class="titulo">Hello world</header>
                 <p>
                     To get started with writing JavaScript, open the Scratchpad and write your first "Hello world" JavaScript code: 
                 </p>
@@ -100,7 +174,7 @@
                 </p>
             </section>
             <section class="main-section" id="Variables">
-                <header>Variables</header>
+                <header class="titulo">Variables</header>
                 <p>
                     You use variables as symbolic names for values in your application. The names of variables, called identifiers, conform to certain rules.
                 </p>
@@ -112,7 +186,7 @@
                 </p>
             </section>
             <section class="main-section" id="Declaring_variables">
-                <header>Declaring Variables</header>
+                <header class="titulo">Declaring Variables</header>
                 <p>
                     You can declare a variable in three ways: <br>
                     With the keyword var. For example, 
@@ -145,7 +219,7 @@
                 </p>
             </section>
             <section class="main-section" id="Variable_scope">
-                <header>Variable scope</header>
+                <header class="titulo">Variable scope</header>
                 <p>
                     When you declare a variable outside of any function, it is called a global variable, because it is available to any other code in the current document. When you declare a variable within a function, it is called a local variable, because it is available only within that function.
                 </p>
@@ -167,7 +241,6 @@
                     </code>
                 </p>
             </section>
-
         </main>
     </body>
 </html>
